@@ -7,7 +7,7 @@ Esta es una aplicación web que representa una Pokédex, un listado de Pokémon,
 ## Requisitos Técnicos
 
 - La aplicación es completamente responsiva y se visualiza correctamente en dispositivos móviles y computadoras.
-- Utiliza HTML, CSS
+- Utiliza HTML, CSS y Javascript para la interfaz de usuario
 - Utiliza PHP para el backend y la lógica del servidor.
 - Utiliza una base de datos MySQL para almacenar los datos de los Pokémon.
 
