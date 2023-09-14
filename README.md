@@ -1,6 +1,6 @@
 # Pokédex Web App
 
-![Pokédex Screenshot](https://github.com/TU_USUARIO/TU_REPOSITORIO/raw/main/ruta/a/la/imagen/screenshot.png)
+![Pokédex Screenshot](https://github.com/GrupoPokedex/Pokedex/blob/main/charizard.png)
 
 Esta es una aplicación web que representa una Pokédex, un listado de Pokémon, y permite realizar búsquedas, así como altas, bajas y modificaciones de los elementos. Puedes encontrar información detallada sobre cada Pokémon y gestionarlos como administrador.
 
