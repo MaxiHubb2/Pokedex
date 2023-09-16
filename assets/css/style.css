@@ -1,0 +1,13 @@
+.bg-pokemon {
+    background-image: url("../img/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.form-container {
+    width: 25em;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 3em;
+    color: white !important;
+    border-radius: 10px;
+}
