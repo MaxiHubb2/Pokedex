@@ -15,7 +15,7 @@ require_once("./db_functions.php");
 
         $query="INSERT INTO pokemon(identificador, nombre, tipo, descripcion, vida, defensa, peso, velocidad, ataque) VALUES
         ($identificador,'$nombre',$tipo,'$descripcion',$vida,$defensa,$peso,$velocidad,$ataque)";
-        var_dump($query);
+
         if(ejecutar_query($query)){
             if($_FILES["img"]["error"] > 0){
                 echo "Error: " . $_FILES["img"]["error"] . "<br />";
