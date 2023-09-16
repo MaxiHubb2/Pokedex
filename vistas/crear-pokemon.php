@@ -23,7 +23,7 @@ require_once("../assets/functions/db_functions.php");
 <body class="bg-pokemon">
 
     <div class="container pt-5 d-flex justify-content-center">
-        <form class="form-container" action="assets/functions/crear_pokemon.php" method="post"
+        <form class="form-container" action="../assets/functions/crear_pokemon.php" method="post"
             enctype="multipart/form-data">
             <h3>Crear Pokemon</h3>
             <div class="mb-3">
