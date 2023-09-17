@@ -1,6 +1,7 @@
 <?php
 
-require_once("../assets/functions/db_functions.php");
+    require_once("../assets/functions/db_functions.php");
+    require_once("../assets/functions/auth.php");
 
     $tipos=ejecutar_query("SELECT * FROM tipos_pokemon",true);
     

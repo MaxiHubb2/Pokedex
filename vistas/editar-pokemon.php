@@ -1,58 +1,99 @@
+<?php
+
+    require_once("../assets/functions/db_functions.php");
+  /*   require_once("../assets/functions/auth.php"); */
+
+    $tipos=ejecutar_query("SELECT * FROM tipos_pokemon",true);
+
+    if(isset($_GET['identificador'])){
+        $identificador=$_GET['identificador'];
+        if($_pokemon=ejecutar_query("SELECT p.*, tp.nombre as tipoNombre FROM pokemon p JOIN tipos_pokemon as tp ON p.tipo=tp.id WHERE p.identificador=$identificador",true)){
+            $pokemon = $_pokemon[0];
+        }else{
+            header("Location: index.php");
+            exit();
+        }
+    }else{
+        header("Location: index.php");
+        exit();
+    }
+
+    
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear Pokemon</title>
+    <title>Editar Pokemon</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
 <body class="bg-pokemon">
 
     <div class="container pt-5 d-flex justify-content-center">
-        <form class="form-container" action="">
-            <h3>Crear Pokemon</h3>
+        <form class="form-container" action="../assets/functions/editar_pokemon.php" method="post"
+            enctype="multipart/form-data">
+            <h3>Editar Pokemon</h3>
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre</label>
                 <input type="text" required class="form-control" id="nombre"
-                    placeholder="Ingrese el nombre de su pokemon">
+                    placeholder="Ingrese el nombre de su pokemon" name="nombre" value = <?php echo $pokemon->nombre; ?>>
+            </div>
+            <div class="mb-3">
+                <label for="tipo" class="form-label">Tipo</label>
+                <select class="form-select" aria-label="Default select example" name="tipo" required>
+                    <?php 
+                        foreach ($tipos as $tipo ) {
+                            echo "<option value='$tipo->id'>$tipo->nombre</option>";
+                        }
+                    ?>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="identificador" class="form-label">Identificador</label>
+                <input type="number" required class="form-control" id="identificador"
+                    placeholder="Ingrese el identificador de su pokemon" name="identificador"  value = <?php echo $pokemon->identificador; ?>>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="descripcion">Descripcion</label>
-                <textarea class="form-control" placeholder="Ingrese una descripcion de su pokemon" id="descripcion"
-                    style="height: 100px"></textarea>
+                <textarea class="form-control" id="descripcion" name="descripcion" style="height: 100px"><?php echo htmlspecialchars($pokemon->descripcion); ?></textarea>
+
             </div>
             <div class="mb-3">
                 <label for="vida" class="form-label">Vida</label>
                 <input type="number" required class="form-control" id="vida"
-                    placeholder="Ingrese el nivel de vida de su pokemon">
+                    placeholder="Ingrese el nivel de vida de su pokemon" name="vida" value = <?php echo $pokemon->vida; ?>>
             </div>
             <div class="mb-3">
                 <label for="defensa" class="form-label">Defensa</label>
                 <input type="number" required class="form-control" id="defensa"
-                    placeholder="Ingrese el nivel de defensa de su pokemon">
+                    placeholder="Ingrese el nivel de defensa de su pokemon" name="defensa" value = <?php echo $pokemon->defensa; ?>>
             </div>
             <div class="mb-3">
                 <label for="peso" class="form-label">Peso</label>
-                <input type="number" required class="form-control" id="peso"
-                    placeholder="Ingrese el peso de su pokemon">
+                <input type="number" required class="form-control" id="peso" placeholder="Ingrese el peso de su pokemon"
+                    name="peso" value = <?php echo $pokemon->peso; ?>>
             </div>
             <div class="mb-3">
                 <label for="velocidad" class="form-label">Velocidad</label>
                 <input type="number" required class="form-control" id="velocidad"
-                    placeholder="Ingrese la velocidad de su pokemon">
+                    placeholder="Ingrese la velocidad de su pokemon" name="velocidad" value = <?php echo $pokemon->velocidad; ?>>
             </div>
             <div class="mb-3">
                 <label for="ataque" class="form-label">Ataque</label>
                 <input type="number" required class="form-control" id="ataque"
-                    placeholder="Ingrese el nivel de ataque de su pokemon">
+                    placeholder="Ingrese el nivel de ataque de su pokemon" name="ataque" value = <?php echo $pokemon->ataque; ?>>
             </div>
             <div class="mb-3">
                 <label for="formFile" class="form-label">Foto de Pokemon</label>
-                <input class="form-control" type="file" id="formFile">
+                <input class="form-control" type="file" id="formFile" name="img">
             </div>
             <div class="mb-3">
                 <button type="submit" class="btn btn-primary w-100">Crear</button>

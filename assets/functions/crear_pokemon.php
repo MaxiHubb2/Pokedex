@@ -1,6 +1,6 @@
 <?php
 
-require_once("./db_functions.php");
+    require_once("./db_functions.php");
 
     if(isset($_POST) && isset($_FILES['img'])){
         $identificador=$_POST['identificador'];
@@ -21,7 +21,7 @@ require_once("./db_functions.php");
                 echo "Error: " . $_FILES["img"]["error"] . "<br />";
             }else{
                 $extension = pathinfo($_FILES["img"]["name"], PATHINFO_EXTENSION);
-                $destino = "../../uploads/" . $_POST['identificador'] . "." . $extension;
+                $destino = "../../uploads/" . $_POST['id'] . "." . $extension;
                 move_uploaded_file($_FILES["img"]["tmp_name"],$destino); 
                 header("Location: ../index.php");
                 exit();
