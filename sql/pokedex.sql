@@ -67,6 +67,18 @@ INSERT INTO `tipos_pokemon` (`id`, `nombre`, `descripcion`) VALUES
 (3, 'Planta', 'Tipo de Pokemon asociado con plantas y habilidades relacionadas con la naturaleza.'),
 (4, 'Electrico', 'Tipo de Pokemon asociado con electricidad y habilidades eléctricas.');
 
+
+ALTER TABLE pokemon
+MODIFY COLUMN img VARCHAR(255); -- Cambia 255 al valor deseado
+
+-- Insertando el pokemon // prueba para la busqueda
+INSERT INTO pokemon (identificador, nombre, img, tipo, descripcion, vida, defensa, peso, velocidad, ataque)
+VALUES (1, 'Pikachu', "/Pokedex/assets/img/pokemons/pikachu.png", 1,'Tipo de Pokemon asociado con electricidad y habilidades eléctricas.', 100, 50, 6, 90, 55);
+
+INSERT INTO pokemon (identificador, nombre, img, tipo, descripcion, vida, defensa, peso, velocidad, ataque)
+VALUES (2, 'Bulbasaur', "/Pokedex/assets/img/pokemons/bulbasaur.png",2, 'Tipo de Pokemon asociado con plantas y habilidades relacionadas con la naturaleza.', 90, 65, 7, 80, 50);
+
+
 -- --------------------------------------------------------
 
 --
