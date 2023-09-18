@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 16-09-2023 a las 00:54:57
+-- Tiempo de generación: 18-09-2023 a las 00:43:42
 -- Versión del servidor: 5.7.31
 -- Versión de PHP: 7.3.21
 
@@ -39,9 +39,18 @@ CREATE TABLE IF NOT EXISTS `pokemon` (
   `peso` int(11) DEFAULT NULL,
   `velocidad` int(11) DEFAULT NULL,
   `ataque` int(11) DEFAULT NULL,
+  `img` varchar(40) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `identificador` (`identificador`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `pokemon`
+--
+
+INSERT INTO `pokemon` (`id`, `identificador`, `nombre`, `tipo`, `descripcion`, `vida`, `defensa`, `peso`, `velocidad`, `ataque`, `img`) VALUES
+(1, 1, 'Pikachu', 4, 'Pikachu almacena una gran cantidad de electricidad en sus mejillas. Estas parecen cargarse elÃ©ctricamente durante la noche mientras duerme. Las mejillas de Pikachu tambiÃ©n pueden ser recargadas mediante una descarga elÃ©ctrica, como se ha podido observar en algunos episodios del anime. A veces suelta unas pequeÃ±as descargas cuando se acaba de despertar. Las mejillas son las que generan electricidad, pero esta es conducida y descargada por la punta de su cola produciendo descargas elÃ©ctricas, que aumentan de poder dependiendo del estado de Ã¡nimo de Pikachu. Muchas veces, en las tormentas se juntan y absorben electricidad de los relÃ¡mpagos.', 65, 65, 65, 65, 65, '1.jpg'),
+(5, 2, 'bulbasaur', 3, 'asda', 60, 70, 70, 70, 70, '5.png');
 
 -- --------------------------------------------------------
 
@@ -66,18 +75,6 @@ INSERT INTO `tipos_pokemon` (`id`, `nombre`, `descripcion`) VALUES
 (2, 'Fuego', 'Tipo de Pokemon asociado con fuego y habilidades relacionadas con el fuego.'),
 (3, 'Planta', 'Tipo de Pokemon asociado con plantas y habilidades relacionadas con la naturaleza.'),
 (4, 'Electrico', 'Tipo de Pokemon asociado con electricidad y habilidades eléctricas.');
-
-
-ALTER TABLE pokemon
-MODIFY COLUMN img VARCHAR(255); -- Cambia 255 al valor deseado
-
--- Insertando el pokemon // prueba para la busqueda
-INSERT INTO pokemon (identificador, nombre, img, tipo, descripcion, vida, defensa, peso, velocidad, ataque)
-VALUES (1, 'Pikachu', "/Pokedex/assets/img/pokemons/pikachu.png", 1,'Tipo de Pokemon asociado con electricidad y habilidades eléctricas.', 100, 50, 6, 90, 55);
-
-INSERT INTO pokemon (identificador, nombre, img, tipo, descripcion, vida, defensa, peso, velocidad, ataque)
-VALUES (2, 'Bulbasaur', "/Pokedex/assets/img/pokemons/bulbasaur.png",2, 'Tipo de Pokemon asociado con plantas y habilidades relacionadas con la naturaleza.', 90, 65, 7, 80, 50);
-
 
 -- --------------------------------------------------------
 

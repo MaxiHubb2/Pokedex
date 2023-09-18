@@ -13,18 +13,23 @@
         $velocidad=$_POST['velocidad'];
         $ataque=$_POST['ataque'];
 
-        $query="INSERT INTO pokemon(identificador, nombre, tipo, descripcion, vida, defensa, peso, velocidad, ataque, img) VALUES
-        ($identificador,'$nombre',$tipo,'$descripcion',$vida,$defensa,$peso,$velocidad,$ataque)";
+        $query="UPDATE pokemon SET identificador=$identificador,
+        nombre='$nombre',tipo=$tipo,descripcion='$descripcion',
+        vida=$vida,defensa=$defensa,peso=$peso,velocidad=$velocidad,
+        ataque=$ataque WHERE identificador = $identificador";
 
-        if($id=ejecutar_query($query,false,true)){
+        if(ejecutar_query($query)){
+
+            $id=ejecutar_query("SELECT id FROM pokemon WHERE identificador = $identificador",true)[0];
+
             if($_FILES["img"]["error"] > 0){
                 echo "Error: " . $_FILES["img"]["error"] . "<br />";
             }else{
                 $extension = pathinfo($_FILES["img"]["name"], PATHINFO_EXTENSION);
-                $destino = "../../uploads/" . $_POST['id'] . "." . $extension;
+                $destino = "../../uploads/" . $id->id . "." . $extension;
                 move_uploaded_file($_FILES["img"]["tmp_name"],$destino); 
-                $img="$id.$extension";
-                ejecutar_query("UPDATE pokemon SET img='$img' WHERE id=$id ");
+                $img="$id->id.$extension";
+                ejecutar_query("UPDATE pokemon SET img='$img' WHERE id=$id->id ");
                 header("Location: ../../vistas/busqueda.php");
                 exit();
             }

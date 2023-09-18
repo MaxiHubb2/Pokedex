@@ -99,7 +99,7 @@
                 <input class="form-control" type="file" id="formFile" name="img">
             </div>
             <div class="mb-3">
-                <button type="submit" class="btn btn-primary w-100">Crear</button>
+                <button type="submit" class="btn btn-primary w-100">Editar</button>
             </div>
         </form>
     </div>
