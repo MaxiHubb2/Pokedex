@@ -1,11 +1,9 @@
 <?php
-include_once './vistas/conexion.php';
 
-include './assets/functions/consultarPokemon.php';
-$pokemons = obtenerPokemons($con);
+    require_once '../assets/functions/db_functions.php';
+    include_once '../assets/functions/consultarPokemon.php';
+    $pokemons = obtenerPokemons();
 
-// Cerrar la conexión a la base de datos
-$con->close();
 ?>
 
 <!DOCTYPE html>
@@ -13,8 +11,8 @@ $con->close();
 <head>
     <meta charset="utf-8">
     <title>POKEDEX</title>
-    <link rel="stylesheet" type="text/css" href="\Pokedex\assets\recursos\css\bootstrap.min.css">
-    <link rel="stylesheet" href="\Pokedex\assets\recursos\css\estilos.css">
+    <link rel="stylesheet" type="text/css" href="../assets\recursos\css\bootstrap.min.css">
+    <link rel="stylesheet" href="../assets\recursos\css\estilos.css">
 </head>
 <body>
 
@@ -23,7 +21,7 @@ $con->close();
     <div class="container">
         <div class="row py-3">
             <div class="col">
-                <a href="index.php"><img src="assets\img\logo\logo.png" width="50" height="50"></a>
+                <a href="index.php"><img src="../assets\img\logo\logo.png" width="50" height="50"></a>
             </div>
             <div class="col-md-3">
                 <h1 class="text-center">POKEDEX</h1>
@@ -43,7 +41,7 @@ $con->close();
 <div class="container">
     <div class="row">
         <div class="col-md-12 py-3">
-            <form class="d-flex col" action="./vistas/buscarPokemon.php" method="get">
+            <form class="d-flex col" action="" method="post">
                 <input type="text" class="form-control" name="buscar" placeholder="Ingrese nombre, tipo o número de Pokémon">
                 <button type="submit" class="btn btn-primary" name="boton">¿Quién es este Pokémon?</button>
             </form>
@@ -72,16 +70,16 @@ $con->close();
     if (!empty($pokemons)) {
         foreach ($pokemons as $pokemon) {
             echo '<tr>';
-            echo '<th scope="row">' . $pokemon['id'] . '</th>';
-            echo '<td>' . $pokemon['nombre'] . '</td>';
-            echo '<td><img src="' . $pokemon['img'] . '" alt="' . $pokemon['nombre'] . '" width="50" height="50"></td>';
-            echo '<td>' . $pokemon['tipo'] . '</td>';
-            echo '<td>' . $pokemon['descripcion'] . '</td>';
-            echo '<td>' . $pokemon['vida'] . '</td>';
-            echo '<td>' . $pokemon['defensa'] . '</td>';
-            echo '<td>' . $pokemon['peso'] . '</td>';
-            echo '<td>' . $pokemon['velocidad'] . '</td>';
-            echo '<td>' . $pokemon['ataque'] . '</td>';
+            echo '<th scope="row">' . $pokemon->id . '</th>';
+            echo '<td>' . $pokemon->nombre . '</td>';
+            echo '<td><img src="../uploads/' . $pokemon->img . '" alt="' . $pokemon->nombre . '" width="50" height="50"></td>';
+            echo '<td>' . $pokemon->tipo . '</td>';
+            echo '<td>' . $pokemon->descripcion . '</td>';
+            echo '<td>' . $pokemon->vida . '</td>';
+            echo '<td>' . $pokemon->defensa . '</td>';
+            echo '<td>' . $pokemon->peso . '</td>';
+            echo '<td>' . $pokemon->velocidad . '</td>';
+            echo '<td>' . $pokemon->ataque . '</td>';
             echo '</tr>';
         }
     } else {

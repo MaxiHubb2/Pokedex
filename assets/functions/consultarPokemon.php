@@ -1,26 +1,19 @@
 <?php
-function obtenerPokemons($con) {
-    $sql = "SELECT * FROM pokemon";
-    $result = $con->query($sql);
-    $pokemons = array();
+    require_once("db_functions.php");
 
-    if (mysqli_num_rows($result) > 0) {
-        while ($fila = mysqli_fetch_assoc($result)) {
-            $pokemon = array();
-            $pokemon['id'] = $fila["id"];
-            $pokemon['nombre'] = $fila["nombre"];
-            $pokemon['img'] = $fila["img"];
-            $pokemon['tipo'] = $fila["tipo"];
-            $pokemon['descripcion'] = $fila["descripcion"];
-            $pokemon['vida'] = $fila["vida"];
-            $pokemon['defensa'] = $fila["defensa"];
-            $pokemon['peso'] = $fila["peso"];
-            $pokemon['velocidad'] = $fila["velocidad"];
-            $pokemon['ataque'] = $fila["ataque"];
-            $pokemons[] = $pokemon;
+
+    function obtenerPokemons() {
+        $pokemons = array();
+        $where = "";
+        if(isset($_POST['buscar']) && $_POST['buscar']!= ""){
+            $buscar = $_POST['buscar'];
+            $where = " AND nombre LIKE '$buscar'";
         }
-    }
+        
+        if($_pokemons = ejecutar_query("SELECT * FROM pokemon WHERE 1 $where",true)){
+            $pokemons= $_pokemons;
+        }
 
-    return $pokemons;
-}
+        return $pokemons;
+    }
 ?>
