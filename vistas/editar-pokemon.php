@@ -40,7 +40,10 @@
     <div class="container pt-5 d-flex justify-content-center">
         <form class="form-container" action="../assets/functions/editar_pokemon.php" method="post"
             enctype="multipart/form-data">
-            <h3>Editar Pokemon</h3>
+            <h3 class="text-center" >Editar Pokemon</h3>
+            <div class="d-flex justify-content-center">
+                <img src="../uploads/<?php echo $pokemon->img?>" width="100" alt="">
+            </div>
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre</label>
                 <input type="text" required class="form-control" id="nombre"
