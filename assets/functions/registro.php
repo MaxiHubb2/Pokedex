@@ -18,7 +18,7 @@ if (isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['email'
 
     if ($usuario = ejecutar_query($query,false,true)) {
         session_start();
-        $_SESSION['id'] = $usuario[1]->id;
+        $_SESSION['id'] = $usuario;
         header("Location: ../../vistas/busqueda.php");
         exit();
     } else {

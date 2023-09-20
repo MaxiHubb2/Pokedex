@@ -2,6 +2,7 @@
 
     require_once '../assets/functions/db_functions.php';
     include_once '../assets/functions/consultarPokemon.php';
+    require_once("../assets/functions/auth.php");
     $pokemons = obtenerPokemons();
 
 ?>
@@ -20,17 +21,15 @@
 <header>
     <div class="container">
         <div class="row py-3">
-            <div class="col">
+            <div class="col-md-3">
                 <a href="index.php"><img src="../assets\img\logo\logo.png" width="50" height="50"></a>
             </div>
             <div class="col-md-3">
                 <h1 class="text-center">POKEDEX</h1>
             </div>
             <div class="col-md-6 pt-2">
-                <form class="d-flex mx-5 col-4" action="login.php" method="post">
-                    <input type="text" name="usuario" class="form-control mx-2 col-1" placeholder="usuario">
-                    <input type="password" name="password" class="form-control mx-2 col-1" placeholder="contraseña">
-                    <button button type="submit" class="btn btn-primary col-6">Ingresar</button>
+                <form class="d-flex mx-5 justify-content-end" action="../assets/functions/logout.php" method="post">
+                    <button button type="submit" class="btn btn-danger col-6">Salir</button>
                 </form>
             </div>
         </div>
