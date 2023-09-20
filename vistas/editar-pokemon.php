@@ -107,7 +107,7 @@
                         <input class="form-control" type="file" id="formFile" name="img">
                     </div>
                     <div class="d-flex justify-content-between space-between">
-                        <img src="../assets/img/pikachu.gif" alt="" width="100" class="pokemonGif">
+                        <img src="../assets/img/pikachu2.gif" alt="" width="100" class="pokemonGif">
                         <img src="../assets/img/squirtle.gif" alt="" width="100" class="pokemonGif">
                         <div class="mb-3 col-12 col-sm-4 col-lg-4 pt-3">
                             <button type="submit" class="btn btn-danger w-100">Editar</button>
