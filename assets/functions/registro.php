@@ -2,24 +2,24 @@
 
 require_once("./db_functions.php");
 
-if (isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['repetirPassword'])) {
+if (isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['email']) && isset($_POST['password'])) {
 
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $repetirPassword = $_POST['repetirPassword'];
+    
 
 
 
 
-    $query = "SELECT id FROM usuario WHERE email = '$email' AND password = '$password' AND repetirPassword = '$repetirPassword'";
+    $query = "INSERT INTO usuario(nombre, apellido, email, password ) VALUES ('$nombre','$apellido','$email','$password')";
 
 
-    if ($usuario = ejecutar_query($query, true)) {
+    if ($usuario = ejecutar_query($query,false,true)) {
         session_start();
         $_SESSION['id'] = $usuario[1]->id;
-        header("Location: ../../vistas/index.php");
+        header("Location: ../../vistas/busqueda.php");
         exit();
     } else {
         header("Location: ../../vistas/registro.php");

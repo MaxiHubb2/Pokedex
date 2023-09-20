@@ -77,7 +77,7 @@
                 <div class="pt-1 mb-2 d-flex justify-content-center">
                   <button class="btn btn-lg btn-block btn-danger " type="submit">Ingresar</button>
                 </div>
-                <p class="mb-3 pb-lg-1" style="color: black;">¿No tienes cuenta aún? <a href="#!"
+                <p class="mb-3 pb-lg-1" style="color: black;">¿No tienes cuenta aún? <a href="registro.php"
                     style="color: red;">Regístrate aquí</a></p>
               </form>
               <img src="../assets/img/charmander.gif" alt="" class="corner-image">
