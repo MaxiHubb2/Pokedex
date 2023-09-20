@@ -56,7 +56,8 @@
                         <select class="form-select" aria-label="Default select example" name="tipo" required>
                             <?php 
                             foreach ($tipos as $tipo ) {
-                                echo "<option value='$tipo->id'>$tipo->nombre</option>";
+                                $selected = ($tipo->id == $pokemon->tipo) ? "selected" : "";
+                                echo "<option value='$tipo->id' $selected >$tipo->nombre</option>";
                             }
                         ?>
                         </select>
