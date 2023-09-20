@@ -6,6 +6,7 @@ body {
     padding: 0;
 }
 
+
 h1 {
     text-align: center;
     margin-top: 20px;
@@ -17,7 +18,10 @@ h1 {
 }
 
 /* Estilos para la tabla de Pokémon */
-.table {
+.table-container {
+    max-width: 1100px; 
+    margin: 0 auto; 
+    overflow-x: auto; 
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -33,6 +37,7 @@ h1 {
     text-align: center;
     padding: 10px;
 }
+
 
 /* Estilos para las tarjetas de Pokémon (puedes ajustar estos estilos según tus necesidades) */
 .pokemon-card {

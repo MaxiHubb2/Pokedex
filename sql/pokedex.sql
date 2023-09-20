@@ -48,9 +48,9 @@ CREATE TABLE IF NOT EXISTS `pokemon` (
 -- Volcado de datos para la tabla `pokemon`
 --
 
-INSERT INTO `pokemon` (`id`, `identificador`, `nombre`, `tipo`, `descripcion`, `vida`, `defensa`, `peso`, `velocidad`, `ataque`, `img`) VALUES
-(1, 1, 'Pikachu', 4, 'Pikachu almacena una gran cantidad de electricidad en sus mejillas. Estas parecen cargarse elÃ©ctricamente durante la noche mientras duerme. Las mejillas de Pikachu tambiÃ©n pueden ser recargadas mediante una descarga elÃ©ctrica, como se ha podido observar en algunos episodios del anime. A veces suelta unas pequeÃ±as descargas cuando se acaba de despertar. Las mejillas son las que generan electricidad, pero esta es conducida y descargada por la punta de su cola produciendo descargas elÃ©ctricas, que aumentan de poder dependiendo del estado de Ã¡nimo de Pikachu. Muchas veces, en las tormentas se juntan y absorben electricidad de los relÃ¡mpagos.', 65, 65, 65, 65, 65, '1.jpg'),
-(5, 2, 'bulbasaur', 3, 'asda', 60, 70, 70, 70, 70, '5.png');
+INSERT INTO `pokemon` (`id`, `identificador`, `nombre`, `tipo`, `descripcion`, `vida`, `defensa`, `peso`, `velocidad`, `ataque`, `img`)
+VALUES (2, 1, 'Pikachu', 4, 'Descripción de Pikachu...', 65, 65, 65, 65, 65, '1.jpg'), 
+       (3, 2, 'Bulbasaur', 3, 'Descripción de Bulbasaur...', 60, 70, 70, 70, 70, '5.png');
 
 -- --------------------------------------------------------
 

@@ -1,6 +1,7 @@
 <?php
 
     require_once '../assets/functions/db_functions.php';
+    require_once '../assets/functions/generarFilaPokemon.php';
     include_once '../assets/functions/consultarPokemon.php';
     $pokemons = obtenerPokemons();
 
@@ -50,44 +51,43 @@
 </div>
 
 <!--------------------- TABLA -------------------------------->
-<table class="table container">
-    <thead class="text-center">
-    <tr>
-        <th scope="col">Nro</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Imagen</th>
-        <th scope="col">Tipo</th>
-        <th scope="col">Descripción</th>
-        <th scope="col">Vida</th>
-        <th scope="col">Defensa</th>
-        <th scope="col">Peso</th>
-        <th scope="col">Velocidad</th>
-        <th scope="col">Ataque</th>
-    </tr>
-    </thead>
-    <tbody>
-    <?php
-    if (!empty($pokemons)) {
-        foreach ($pokemons as $pokemon) {
-            echo '<tr>';
-            echo '<th scope="row">' . $pokemon->identificador . '</th>';
-            echo '<td>' . $pokemon->nombre . '</td>';
-            echo '<td><img src="../uploads/' . $pokemon->img . '" alt="' . $pokemon->nombre . '" width="50" height="50"></td>';
-            echo '<td>' . $pokemon->tipo . '</td>';
-            echo '<td>' . $pokemon->descripcion . '</td>';
-            echo '<td>' . $pokemon->vida . '</td>';
-            echo '<td>' . $pokemon->defensa . '</td>';
-            echo '<td>' . $pokemon->peso . '</td>';
-            echo '<td>' . $pokemon->velocidad . '</td>';
-            echo '<td>' . $pokemon->ataque . '</td>';
-            echo '</tr>';
+
+    <div class="table-container">
+        <table class="table">
+            <tr>
+                <th scope="col">Nro</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Imagen</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Vida</th>
+                <th scope="col">Defensa</th>
+                <th scope="col">Peso</th>
+                <th scope="col">Velocidad</th>
+                <th scope="col">Ataque</th>
+                <th scope="col">Acciones</th> 
+            </tr>
+
+        <?php
+        if (!empty($pokemons)) {
+            foreach ($pokemons as $pokemon) {
+                // Llama a la función generarFilaPokemon para generar la fila de Pokémon
+                generarFilaPokemon($pokemon);
+            }
+        } else {
+            echo '<tr><td colspan="11" class="text-center">No se encontraron Pokémon.</td></tr>';
+            $todosLosPokemons = ejecutar_query("SELECT * FROM pokemon", true);
+            if (!empty($todosLosPokemons)) {
+                foreach ($todosLosPokemons as $pokemon) {
+                    // Llama a la función generarFilaPokemon para generar la fila de Pokémon
+                    generarFilaPokemon($pokemon);
+                }
+            }
         }
-    } else {
-        echo '<tr><td colspan="10" class="text-center">No se encontraron Pokémon.</td></tr>';
-    }
-    ?>
-    </tbody>
-</table>
+        
+        ?>
+         </table>
+     </div>
 
 <script type="text/javascript" src="../assets/recursos/js/bootstrap.min.js"></script>
 
