@@ -17,7 +17,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
       header("Location: ../../vistas/busqueda.php");
       exit();
     } else{
-        header("Location: ../../vistas/index.php");
+        header("Location: ../../index.php");
         exit();
     }
 } else {

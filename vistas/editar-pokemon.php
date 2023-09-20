@@ -10,11 +10,11 @@
         if($_pokemon=ejecutar_query("SELECT p.*, tp.nombre as tipoNombre FROM pokemon p JOIN tipos_pokemon as tp ON p.tipo=tp.id WHERE p.identificador=$identificador",true)){
             $pokemon = $_pokemon[0];
         }else{
-            header("Location: index.php");
+            header("Location: busqueda.php");
             exit();
         }
     }else{
-        header("Location: index.php");
+        header("Location: busqueda.php");
         exit();
     }
 
