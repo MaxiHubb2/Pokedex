@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 18-09-2023 a las 00:43:42
+-- Tiempo de generación: 20-09-2023 a las 21:34:57
 -- Versión del servidor: 5.7.31
 -- Versión de PHP: 7.3.21
 
@@ -42,15 +42,15 @@ CREATE TABLE IF NOT EXISTS `pokemon` (
   `img` varchar(40) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `identificador` (`identificador`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `pokemon`
 --
 
-INSERT INTO `pokemon` (`id`, `identificador`, `nombre`, `tipo`, `descripcion`, `vida`, `defensa`, `peso`, `velocidad`, `ataque`, `img`)
-VALUES (2, 1, 'Pikachu', 4, 'Descripción de Pikachu...', 65, 65, 65, 65, 65, '1.jpg'), 
-       (3, 2, 'Bulbasaur', 3, 'Descripción de Bulbasaur...', 60, 70, 70, 70, 70, '5.png');
+INSERT INTO `pokemon` (`id`, `identificador`, `nombre`, `tipo`, `descripcion`, `vida`, `defensa`, `peso`, `velocidad`, `ataque`, `img`) VALUES
+(1, 1, 'Pikachu', 4, 'Pikachu almacena una gran cantidad de electricidad en sus mejillas. Estas parecen cargarse elÃ©ctricamente durante la noche mientras duerme. Las mejillas de Pikachu tambiÃ©n pueden ser recargadas mediante una descarga elÃ©ctrica, como se ha podido observar en algunos episodios del anime. A veces suelta unas pequeÃ±as descargas cuando se acaba de despertar. Las mejillas son las que generan electricidad, pero esta es conducida y descargada por la punta de su cola produciendo descargas elÃ©ctricas, que aumentan de poder dependiendo del estado de Ã¡nimo de Pikachu. Muchas veces, en las tormentas se juntan y absorben electricidad de los relÃ¡mpagos.', 65, 65, 65, 65, 65, '1.jpg'),
+(5, 2, 'bulbasaur', 3, 'asda', 60, 70, 70, 70, 70, '5.png');
 
 -- --------------------------------------------------------
 
@@ -88,8 +88,16 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `nombre` varchar(40) DEFAULT NULL,
   `apellido` varchar(40) DEFAULT NULL,
   `email` varchar(40) DEFAULT NULL,
+  `password` varchar(40) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `nombre`, `apellido`, `email`, `password`) VALUES
+(4, 'usuario', 'test', 'poketest@mail.com', '12345');
 COMMIT;
 
 ALTER TABLE usuario

@@ -86,7 +86,7 @@
                                 </div>
 
 
-                                <p class="mb-3 pb-lg-1" style="color: black;">¿Tienes cuenta ya? <a href="index.php"
+                                <p class="mb-3 pb-lg-1" style="color: black;">¿Tienes cuenta ya? <a href="login.php"
                                         style="color: red;">Inicia sesión</a></p>
                                 <div class="d-flex justify-content-center">
                                     <button type="submit" class="btn btn-primary btn-danger">Registrarse</button>

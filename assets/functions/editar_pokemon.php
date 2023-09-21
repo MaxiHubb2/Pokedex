@@ -2,7 +2,7 @@
 
     require_once("./db_functions.php");
 
-    if(isset($_POST) && isset($_FILES['img'])){
+    if(isset($_POST)){
         $identificador=$_POST['identificador'];
         $nombre=$_POST['nombre'];
         $tipo=$_POST['tipo'];
@@ -20,19 +20,25 @@
 
         if(ejecutar_query($query)){
 
-            $id=ejecutar_query("SELECT id FROM pokemon WHERE identificador = $identificador",true)[0];
+            if(isset($_FILES['img']) && $_FILES["img"]["error"] === 0){
+                $id=ejecutar_query("SELECT id FROM pokemon WHERE identificador = $identificador",true)[0];
 
-            if($_FILES["img"]["error"] > 0){
-                echo "Error: " . $_FILES["img"]["error"] . "<br />";
+                if($_FILES["img"]["error"] > 0){
+                    echo "Error: " . $_FILES["img"]["error"] . "<br />";
+                }else{
+                    $extension = pathinfo($_FILES["img"]["name"], PATHINFO_EXTENSION);
+                    $destino = "../../uploads/" . $id->id . "." . $extension;
+                    move_uploaded_file($_FILES["img"]["tmp_name"],$destino); 
+                    $img="$id->id.$extension";
+                    ejecutar_query("UPDATE pokemon SET img='$img' WHERE id=$id->id ");
+                    header("Location: ../../vistas/busqueda.php");
+                    exit();
+                }
             }else{
-                $extension = pathinfo($_FILES["img"]["name"], PATHINFO_EXTENSION);
-                $destino = "../../uploads/" . $id->id . "." . $extension;
-                move_uploaded_file($_FILES["img"]["tmp_name"],$destino); 
-                $img="$id->id.$extension";
-                ejecutar_query("UPDATE pokemon SET img='$img' WHERE id=$id->id ");
                 header("Location: ../../vistas/busqueda.php");
                 exit();
             }
+
         }else echo "error al crear pokemon";
     }else{
         echo "no data";
