@@ -5,8 +5,9 @@
 
     if(isset( $_SESSION['id'] )){
         $id = $_SESSION['id'];
-        if($usuario = ejecutar_query("SELECT * FROM usuario WHERE id = $id",true)[0]) return true;
-        else{
+        $usuario = ejecutar_query("SELECT * FROM usuario WHERE id = $id",true);
+        if(count($usuario)==0){
+            $_SESSION['id']=null;
             header("Location: ../index.php");
             exit();
         }    
