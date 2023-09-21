@@ -40,6 +40,11 @@ if (isset($_POST['buscar'])) {
         <form class="search-form d-flex" action="" method="post">
             <input type="text" class="form-control" name="buscar" placeholder="Ingresa el nombre del Pokémon">
             <button type="submit" class="btn btn-primary" name="boton">¿Quién es este Pokémon?</button>
+            <a href="../vistas\crear-pokemon.php" class="btn-create-pokemon">
+            <span class="btn-text">+</span> <!-- El signo "+" inicial -->
+            <span class="hover-text">Crear tu Pokémon</span> <!-- Texto al pasar el mouse -->
+            </a>
+
         </form>
     </div>
 </header>

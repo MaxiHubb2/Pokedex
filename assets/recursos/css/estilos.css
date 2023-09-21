@@ -131,6 +131,35 @@ header h1 {
     margin-left: 5px;
 }
 
+/* Quitar el subrayado y ajustar la duración de la transición */
+.btn-create-pokemon {
+    background-color: #4CAF50; /* Color de fondo verde */
+    color: #fff; /* Texto blanco */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out; 
+    text-decoration: none; 
+    position: relative;
+}
+
+/* El texto al pasar el mouse inicialmente está oculto */
+.btn-create-pokemon .hover-text {
+    display: none;
+}
+
+/* Al pasar el mouse, ocultamos el signo "+" y mostramos el texto "Crear tu Pokémon" */
+.btn-create-pokemon:hover .btn-text {
+    display: none;
+}
+
+.btn-create-pokemon:hover .hover-text {
+    display: inline; /* Mostrar el texto al pasar el mouse */
+    
+}
+
  /* Estilos para el botón de salir */
  .logout-button {
     text-align: right; /* Alinea a la derecha */
@@ -261,14 +290,21 @@ header h1 {
     .search-form button {
         /* Modifica los estilos del botón de búsqueda para pantallas medianas aquí... */
         padding: 5px 10px;
+        margin-top: 4%;
     }
     
     .pokemon-card {
         /* Modifica los estilos de las tarjetas Pokémon para pantallas medianas aquí... */
-        height: 400px;
-        width: 450px;
+        height: 630px;
+        width: 480px;
 
     }
+    .btn-create-pokemon {
+        font-size: 14px; /* Ajusta el tamaño del texto para dispositivos móviles */
+        padding: 8px 16px; /* Ajusta el espaciado del botón para dispositivos móviles */
+   }
+
+    
 }
 
 /* Estilos para pantallas pequeñas (como dispositivos móviles) */
@@ -301,18 +337,43 @@ header h1 {
     
     .search-form input[type="text"] {
         /* Modifica los estilos del campo de búsqueda para pantallas pequeñas aquí... */
-        width: 70%;
+        width: 80%;
     }
     
     .search-form button {
         /* Modifica los estilos del botón de búsqueda para pantallas pequeñas aquí... */
-        padding: 3px 6px;
+        padding: 14px 30px;
+        margin-top: 4%;
     }
     
     .pokemon-card {
         /* Modifica los estilos de las tarjetas Pokémon para pantallas medianas aquí... */
         height: 500px;
-        width: 350px;
+        width: 310px;
 
     }
+    
+    .btn-create-pokemon {
+        font-size: 14px; /* Tamaño de fuente más pequeño para dispositivos móviles */
+        padding: 8px 110px; /* Espaciado más pequeño para dispositivos móviles */
+        transition: transform 0.5s ease-in-out, background-color 0.3s ease-in-out; /* Añade la transición de fondo */
+        margin-top: 10px; /* Espacio superior para separar el botón de la tarjeta de búsqueda */
+        display: inline-flex; /* Convertirlo en un bloque para que ocupe toda la anchura disponible */
+        text-align: center; /* Centrar el texto en el botón */
+    }
+
+    /* El texto al pasar el mouse inicialmente está oculto */
+    .btn-create-pokemon .hover-text {
+        display: none;
+    }
+
+    /* Al pasar el mouse, ocultamos el signo "+" y mostramos el texto "Crear tu Pokémon" */
+    .btn-create-pokemon:hover .btn-text {
+        display: none;
+    }
+
+    .btn-create-pokemon:hover .hover-text {
+        display: inline; /* Mostrar el texto al pasar el mouse */
+    }
+
 }
