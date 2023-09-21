@@ -1,62 +1,318 @@
-/* Archivo estilos.css */
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f0f0f0;
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(255, 255, 255); /* Fondo color rojo claro */
+    color: #fff; /* Texto blanco */
 }
 
-
-h1 {
+header {
+    background-color: #e23434; 
+    padding: 10px 0;
     text-align: center;
-    margin-top: 20px;
 }
 
-/* Estilos para el formulario de búsqueda */
-.form-control {
-    width: 100%;
+header h1 {
+    margin: 0;
+    font-size: 36px;
 }
 
-/* Estilos para la tabla de Pokémon */
-.table-container {
-    max-width: 1100px; 
-    margin: 0 auto; 
-    overflow-x: auto; 
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.table th {
-    background-color: #f0f0f0;
-}
-
-.table td,
-.table th {
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
     text-align: center;
+}
+.text-center
+{
+    color: black;
+}
+.search-form {
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo del formulario transparente */
+    border-radius: 10px; /* Bordes redondeados */
     padding: 10px;
 }
 
+.search-form input[type="text"] {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
 
-/* Estilos para las tarjetas de Pokémon (puedes ajustar estos estilos según tus necesidades) */
+.search-form button {
+    background-color: #007bff; /* Azul para el botón */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #0056b3; /* Cambio de color al pasar el mouse */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+}
+
 .pokemon-card {
     background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
     text-align: center;
-    transition: transform 0.2s ease-in-out;
-    margin: 10px;
-    display: inline-block;
+    padding: 20px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    align-items: center; /* Centra los elementos horizontalmente */
 }
 
-.pokemon-card:hover {
-    transform: scale(1.05);
+.pokemon-number {
+    font-weight: bold;
+    font-size: 18px;
 }
 
-.pokemon-img {
+.pokemon-image {
     max-width: 100%;
     height: auto;
-    max-height: 120px;
+}
+
+.pokemon-type {
+    background-color: #007bff; /* Color de fondo del tipo */
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+/* Estilo para las tarjetas de Pokémon */
+.tarjeta-pokemon {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    width: 200px; /* Puedes ajustar el ancho según tus necesidades */
+    text-align: center;
+}
+
+.imagen-pokemon {
+    width: 100px; /* Ajusta el tamaño de la imagen */
+    height: 100px; /* Ajusta el tamaño de la imagen */
+}
+
+.info-pokemon {
+    font-family: 'Roboto', sans-serif;
+}
+
+.identificador {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.tipo-pokemon {
+    font-style: italic;
+}
+
+.acciones-pokemon {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.btn {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+ /* Estilos para el botón de salir */
+ .logout-button {
+    text-align: right; /* Alinea a la derecha */
+    padding: 30px; /* Agrega padding */
+    position: absolute;
+    top: 2%;
+    left: 80%;
+}
+
+.logout-button form {
+    display: inline; /* Para que el botón esté en línea con el contenido anterior */
+}
+
+/* Estilos para el botón de salida */
+.logout-button button {
+    background-color: #2576e0;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out; /* Agrega una transición suave */
+}
+
+.logout-button button:hover {
+    background-color: #4adbcf;
+}
+
+
+/* Estilos para el logo */
+.logo {
+    max-width: 50px; 
+    margin-right: 10px;
+}
+
+  /* Estilos adicionales para el campo de búsqueda y el botón */
+  .search-form {
+    justify-content: center; /* Centrar el contenido horizontalmente */
+}
+
+.form-control {
+    width: auto; /* Ancho automático para reducir la longitud */
+    max-width: 350px; /* Ancho máximo ajustado según tus necesidades */
+}
+
+/* Estilos para el botón Modificar */
+.btn-custom-primary {
+    background-color: #007bff !important;
+    color: #fff !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+    margin: 10px 5px 10px 0; /* Agrega margen derecha al botón Modificar */
+}
+
+.btn-custom-danger {
+    background-color: #dc3545 !important;
+    color: #fff !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+    margin: 10px 0; /* Margen superior e inferior para separar el botón Eliminar */
+}
+
+.btn-custom-primary:hover {
+    background-color: #0056b3 !important;
+    color: #fff !important;
+}
+
+
+.btn-custom-danger:hover {
+    background-color: #c82333 !important;
+    color: #fff !important;
+}
+
+/* Ajuste para evitar superposición con la barra "Tipo" */
+.pokemon-type {
+    background-color: #007bff; /* Color de fondo original */
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: inline-block; /* Hacer que el div se muestre en línea y no en bloque */
+}
+
+
+.pokemon-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out; /* Cambia el valor de tiempo a 0.4s o 0.5s según prefieras */
+    cursor: pointer;
+}
+
+
+/* Estilos para pantallas medianas */
+@media (max-width: 768px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); /* Repite 3 columnas con igual ancho */
+        gap: 20px; /* Espacio entre las columnas */
+      }
+      
+    header {
+        /* Modifica los estilos del encabezado para pantallas medianas aquí... */
+        padding: 10px;
+    }
+    
+    .logo {
+        /* Modifica los estilos del logo para pantallas medianas aquí... */
+        max-width: 100px;
+    }
+    
+    .logout-button {
+        text-align: center;
+        padding: 32px;
+        position: absolute;
+        top: -2%;
+        left: -5%;
+    }
+    
+    .search-form input[type="text"] {
+        /* Modifica los estilos del campo de búsqueda para pantallas medianas aquí... */
+        width: 80%;
+    }
+    
+    .search-form button {
+        /* Modifica los estilos del botón de búsqueda para pantallas medianas aquí... */
+        padding: 5px 10px;
+    }
+    
+    .pokemon-card {
+        /* Modifica los estilos de las tarjetas Pokémon para pantallas medianas aquí... */
+        height: 400px;
+        width: 450px;
+
+    }
+}
+
+/* Estilos para pantallas pequeñas (como dispositivos móviles) */
+@media (max-width: 576px) {
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); /* Repite 3 columnas con igual ancho */
+        gap: 20px; /* Espacio entre las columnas */
+      }
+    body {
+        /* Modifica los estilos generales para pantallas pequeñas aquí... */
+        font-size: 14px;
+    }
+    
+    header {
+        /* Modifica los estilos del encabezado para pantallas pequeñas aquí... */
+        padding: 5px;
+    }
+    
+    .logo {
+        /* Modifica los estilos del logo para pantallas pequeñas aquí... */
+        max-width: 80px;
+    }
+    
+    .logout-button button {
+        /* Modifica los estilos del botón de salida para pantallas pequeñas aquí... */
+        padding: 3px 6px;
+    }
+    
+    .search-form input[type="text"] {
+        /* Modifica los estilos del campo de búsqueda para pantallas pequeñas aquí... */
+        width: 70%;
+    }
+    
+    .search-form button {
+        /* Modifica los estilos del botón de búsqueda para pantallas pequeñas aquí... */
+        padding: 3px 6px;
+    }
+    
+    .pokemon-card {
+        /* Modifica los estilos de las tarjetas Pokémon para pantallas medianas aquí... */
+        height: 500px;
+        width: 350px;
+
+    }
 }

@@ -5,9 +5,23 @@
 }
 
 .form-container {
-    width: 25em;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(255, 255, 255, 0.6);
     padding: 3em;
-    color: white !important;
     border-radius: 10px;
+}
+
+.bg-blur {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+@media screen and (max-width:47em) {
+    .pokemonGif {
+        display: none;
+    }
+}
+
+@media screen and (min-width:1919px) {
+    .bg-blur {
+        height: calc(100vh);
+    }
 }
