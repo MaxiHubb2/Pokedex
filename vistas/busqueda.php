@@ -44,11 +44,9 @@ if (isset($_POST['buscar'])) {
             <span class="btn-text">+</span> <!-- El signo "+" inicial -->
             <span class="hover-text">Crear tu Pokémon</span> <!-- Texto al pasar el mouse -->
             </a>
-
         </form>
     </div>
 </header>
-
 
 <div class="container">
         <?php
