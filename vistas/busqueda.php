@@ -38,6 +38,11 @@ require_once("../assets/functions/auth.php");
                         <input type="text" class="form-control" placeholder="Ingrese nombre, tipo o número de Pokémon"
                             aria-label="Ingrese nombre, tipo o número de Pokémon" name="buscar" aria-describedby="button-addon2">
                         <button class="btn btn-warning" type="submit" id="button-addon2">¿Quién es este Pokémon?</button>
+                        <a href="../vistas\crear-pokemon.php" class="btn-create-pokemon">
+                        <span class="btn-text">+</span> <!-- El signo "+" inicial -->
+                        <span class="hover-text">Crear tu Pokémon</span> <!-- Texto al pasar el mouse -->
+                        </a>
+=======
                     </div>
                 </form>
             </div>

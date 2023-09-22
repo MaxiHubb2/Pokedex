@@ -85,3 +85,57 @@
     font-family: 'Pokemon Solid', sans-serif;
     color: yellow;
 }
+
+.btn-create-pokemon {
+    background-color: #4CAF50; 
+    color: #fff; 
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out; 
+    text-decoration: none; 
+    position: relative;
+}
+
+/* El texto al pasar el mouse inicialmente está oculto */
+.btn-create-pokemon .hover-text {
+    display: none;
+}
+
+/* Al pasar el mouse, ocultamos el signo "+" y mostramos el texto "Crear tu Pokémon" */
+.btn-create-pokemon:hover .btn-text {
+    display: none;
+}
+
+.btn-create-pokemon:hover .hover-text {
+    display: inline; /* Mostrar el texto al pasar el mouse */
+}
+
+@media (max-width: 576px) {
+    
+    .btn-create-pokemon {
+        font-size: 14px; 
+        padding: 8px 110px; 
+        transition: transform 0.5s ease-in-out, background-color 0.3s ease-in-out; 
+        margin-top: 10px; 
+        display: inline-flex; 
+        text-align: center;
+    }
+
+    /* El texto al pasar el mouse inicialmente está oculto */
+    .btn-create-pokemon .hover-text {
+        display: none;
+    }
+
+    /* Al pasar el mouse, ocultamos el signo "+" y mostramos el texto "Crear tu Pokémon" */
+    .btn-create-pokemon:hover .btn-text {
+        display: none;
+    }
+
+    .btn-create-pokemon:hover .hover-text {
+        display: inline; /* Mostrar el texto al pasar el mouse */
+    }
+
+}
