@@ -40,11 +40,15 @@ require_once("../assets/functions/auth.php");
                             aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
-                        <div class="d-flex justify-content-center">
-                        <a class="btn btn-primary me-3" aria-current="page" href="crear-pokemon.php">Crear Pokémon</a>
-                        <form  action="../assets/functions/logout.php" method="post">
-                            <button class="btn btn-danger" type="submit">Salir de Pokedex</button>
-                        </form>
+                        <div class="row botonera-sidebar">
+                            <div class="col-sm-6 col-lg-12">
+                                <a class="btn btn-primary mb-3 w-100" aria-current="page" href="crear-pokemon.php">Crear Pokémon</a>
+                            </div>
+                            <div class="col-sm-6 col-lg-12">
+                                <form  action="../assets/functions/logout.php" method="post">
+                                    <button class="btn btn-danger w-100" type="submit">Salir de Pokedex</button>
+                                </form>
+                            </div>
                         </div>
                       <div class="pokemons-nav">
                         <img src="../assets/img/pikachu2.gif" alt="" width="75" >

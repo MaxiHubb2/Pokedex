@@ -19,6 +19,9 @@
     .pokemonGif {
         display: none;
     }
+    .botonera-sidebar {
+        padding-top: 6rem!important;
+    }
 }
 
 @media screen and (min-width:1919px) {
