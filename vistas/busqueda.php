@@ -42,6 +42,7 @@ require_once("../assets/functions/auth.php");
                         <span class="btn-text">+</span> <!-- El signo "+" inicial -->
                         <span class="hover-text">Crear tu Pokémon</span> <!-- Texto al pasar el mouse -->
                         </a>
+=======
                     </div>
                 </form>
             </div>
