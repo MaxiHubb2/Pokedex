@@ -20,21 +20,14 @@ require_once("../assets/functions/auth.php");
 
 <body>
     <header>
-        <div class="container">
-            <div class="row py-3">
-                <div class="col-md-3">
-                    <a href="index.php"><img src="../assets\img\logo\logo.png" width="50" height="50"></a>
-                </div>
-                <div class="col-md-3">
-                    <h1 class="text-center">POKEDEX</h1>
-                </div>
-                <div class="col-md-6 pt-2">
-                    <form class="d-flex mx-5 justify-content-end" action="../assets/functions/logout.php" method="post">
-                        <button button type="submit" class="btn btn-danger col-6">Salir</button>
-                    </form>
-                </div>
+        <nav class="navbar bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand poke-text"><img src="../assets\img\logo\logo.png" width="50" height="50">Pokedex</a>
+                <form class="d-flex" action="../assets/functions/logout.php" method="post">
+                    <button class="btn btn-outline-danger" type="submit">Salir de Pokedex</button>
+                </form>
             </div>
-        </div>
+        </nav>
     </header>
     <div class="container">
         <div class="row">
@@ -45,7 +38,7 @@ require_once("../assets/functions/auth.php");
                     <button type="submit" class="btn btn-primary" name="boton">¿Quién es este Pokémon?</button>
                 </form>
             </div>
-            
+
             <?php
             if($no_encontrado){
                 echo'

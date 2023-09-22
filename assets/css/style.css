@@ -1,3 +1,4 @@
+@import url('https://fonts.cdnfonts.com/css/pokemon-solid');
 .bg-pokemon {
     background-image: url("../img/bg.jpg");
     background-repeat: no-repeat;
@@ -74,4 +75,9 @@
     text-align: center;
     padding-top: 8px;
     margin: 2px;
+}
+
+.poke-text {
+    font-family: 'Pokemon Solid', sans-serif;
+    color: yellow;
 }
