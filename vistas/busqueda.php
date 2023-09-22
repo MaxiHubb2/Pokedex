@@ -42,26 +42,14 @@ require_once '../assets/functions/auth.php';
                     </div>
                     <div class="offcanvas-body">
                         <div class="row botonera-sidebar">
-                            <?php 
-                                if($logued){
-                                    echo'
-                                    <div class="col-md-6">
-                                        <a class="btn btn-primary mb-3 w-100" aria-current="page" href="crear-pokemon.php">Crear Pokémon</a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <form  action="../assets/functions/logout.php" method="post">
-                                            <button class="btn btn-danger w-100" type="submit">Salir de Pokedex</button>
-                                        </form>
-                                    </div>
-                                    ';
-                                }else{
-                                    echo'
-                                    <div class="col-md-6">
-                                        <a class="btn btn-primary mb-3 w-100" aria-current="page" href="login.php">Iniciar Sesión</a>
-                                    </div>
-                                    ';
-                                }
-                            ?>
+                            <div class="col-md-6">
+                                <a class="btn btn-primary mb-3 w-100" aria-current="page" href="crear-pokemon.php">Crear Pokémon</a>
+                            </div>
+                            <div class="col-md-6">
+                                <form  action="../assets/functions/logout.php" method="post">
+                                    <button class="btn btn-danger w-100" type="submit">Salir de Pokedex</button>
+                                </form>
+                            </div>
                         </div>
                         <div class="pokemons-nav">
                             <img src="../assets/img/pikachu2.gif" alt="" width="75" >
