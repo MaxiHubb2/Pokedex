@@ -41,10 +41,10 @@ require_once("../assets/functions/auth.php");
                     </div>
                     <div class="offcanvas-body">
                         <div class="row botonera-sidebar">
-                            <div class="col-sm-6 col-lg-12">
+                            <div class="col-md-6">
                                 <a class="btn btn-primary mb-3 w-100" aria-current="page" href="crear-pokemon.php">Crear Pokémon</a>
                             </div>
-                            <div class="col-sm-6 col-lg-12">
+                            <div class="col-md-6">
                                 <form  action="../assets/functions/logout.php" method="post">
                                     <button class="btn btn-danger w-100" type="submit">Salir de Pokedex</button>
                                 </form>
