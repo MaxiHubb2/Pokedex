@@ -22,6 +22,21 @@
     .botonera-sidebar {
         padding-top: 6rem!important;
     }
+    .eliminar-desktop {
+        display: none;
+    }
+    .eliminar-mobile {
+        display: block;
+    }
+}
+
+@media screen and (min-width:47em) {
+    .eliminar-desktop {
+        display: block;
+    }
+    .eliminar-mobile {
+        display: none;
+    }
 }
 
 @media screen and (min-width:1919px) {
