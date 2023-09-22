@@ -45,6 +45,7 @@
     text-align: center;
     padding-top: 8px;
     margin: 2px;
+    display: block;
 }
 
 .pokemon-vida {
