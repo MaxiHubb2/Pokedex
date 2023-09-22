@@ -68,7 +68,7 @@
     <?php
     if (!empty($pokemons)) {
         foreach ($pokemons as $pokemon) {
-            echo '<tr>';
+            echo "<tr onclick=\"window.location.href='detail.php?identificador=$pokemon->identificador'\">";
             echo '<th scope="row">' . $pokemon->identificador . '</th>';
             echo '<td>' . $pokemon->nombre . '</td>';
             echo '<td><img src="../uploads/' . $pokemon->img . '" alt="' . $pokemon->nombre . '" width="50" height="50"></td>';
