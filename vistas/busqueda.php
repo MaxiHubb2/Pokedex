@@ -19,7 +19,7 @@ $pokemons = obtenerPokemons();
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
-<body>
+<body class="body-busqueda">
 
     <!--------------------- HEADER -------------------------------->
     <header>
