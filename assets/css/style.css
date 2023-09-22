@@ -85,3 +85,8 @@
     font-family: 'Pokemon Solid', sans-serif;
     color: yellow;
 }
+
+.pokemons-nav {
+    position: absolute;
+    bottom: 0;
+}

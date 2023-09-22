@@ -20,24 +20,53 @@ require_once("../assets/functions/auth.php");
 
 <body class="body-busqueda">
     <header>
-        <nav class="navbar bg-dark">
+        <nav class="navbar navbar-dark bg-dark fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand poke-text"><img src="../assets\img\logo\logo.png" width="50" height="50">
                     Pokedex</a>
-                <form class="d-flex" action="../assets/functions/logout.php" method="post">
-                    <button class="btn btn-danger" type="submit">Salir de Pokedex</button>
-                </form>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                    aria-labelledby="offcanvasDarkNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"> <a
+                                class="navbar-brand poke-text"><img src="../assets\img\logo\logo.png" width="50"
+                                    height="50">
+                                Pokedex</a></h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="d-flex justify-content-center">
+                        <a class="btn btn-primary me-3" aria-current="page" href="crear-pokemon.php">Crear Pokémon</a>
+                        <form  action="../assets/functions/logout.php" method="post">
+                            <button class="btn btn-danger" type="submit">Salir de Pokedex</button>
+                        </form>
+                        </div>
+                      <div class="pokemons-nav">
+                        <img src="../assets/img/pikachu2.gif" alt="" width="75" >
+                            <img src="../assets/img/squirtle.gif" alt="" width="50" >
+                            <img src="../assets/img/bulbasaur.gif" alt="" width="50" >
+                            <img src="../assets/img/charmander.gif" alt="" width="100" >
+                      </div>
+                    </div>
+                </div>
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div class="container mt-5 pt-5">
         <div class="row">
             <div class="col-md-12 py-3">
                 <form class="d-flex col" action="" method="post">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Ingrese nombre, tipo o número de Pokémon"
-                            aria-label="Ingrese nombre, tipo o número de Pokémon" name="buscar" aria-describedby="button-addon2">
-                        <button class="btn btn-warning" type="submit" id="button-addon2">¿Quién es este Pokémon?</button>
+                            aria-label="Ingrese nombre, tipo o número de Pokémon" name="buscar"
+                            aria-describedby="button-addon2">
+                        <button class="btn btn-warning" type="submit" id="button-addon2">¿Quién es este
+                            Pokémon?</button>
                     </div>
                 </form>
             </div>
