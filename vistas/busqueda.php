@@ -114,7 +114,7 @@ require_once '../assets/functions/auth.php';
                   </div>
                   <div class="d-flex justify-content-center">
                     <a class="btn btn-primary me-3" href="editar-pokemon.php?identificador='. $pokemon->identificador .'" >Editar</a>
-                    <a class="btn btn-danger me-3" href="detail.php?identificador='. $pokemon->identificador .'" >Eliminar</a>
+                    <a class="btn btn-danger me-3" href="eliminar-pokemon.php?identificador='. $pokemon->identificador .'" >Eliminar</a>
                   </div>
                 </div>
               </div>
