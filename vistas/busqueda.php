@@ -84,7 +84,7 @@ require_once("../assets/functions/auth.php");
                 ';
             }
             foreach ($pokemons as $pokemon) {
-                echo '<div class="col-sm-3 col-lg-3 mb-3">
+                echo '<div class="col-sm-3 col-md-6 col-lg-3 mb-3">
                 <div class="card">
                 <span class="pokemon-id">' . $pokemon->identificador . '</span>
                 <div class="d-flex justify-content-center">
