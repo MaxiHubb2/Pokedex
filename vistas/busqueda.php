@@ -84,76 +84,41 @@ require_once '../assets/functions/auth.php';
                 </div>                
                 ';
             }
-            if($logued){
-                foreach ($pokemons as $pokemon) {
-                    echo '<div class="col-sm-3 col-md-6 col-lg-3 mb-3">
-                    <div class="card">
-                    <span class="pokemon-id">' . $pokemon->identificador . '</span>
-                    <div class="d-flex justify-content-center">
-                    <img src="../uploads/' . $pokemon->img . '" class="card-img-top pokemon-img" alt="' . $pokemon->nombre . '">
-                    </div>
-                    <div class="card-body border-top">
-                      <h5 class="card-title"><a class="text-black" href="detail.php?identificador='. $pokemon->identificador .'" >' . $pokemon->nombre . '</a></h5>
-                      <div class="row" >
-                      <div class="col-3"> 
-                      <img class="w-100" src="../assets/img/vida.png">
-                      <p class="text-center" >'. $pokemon->vida .'</p>
-                      </div>
-                      <div class="col-3"> 
-                      <img class="w-100" src="../assets/img/tipo/' . $pokemon->tipo . '.png">
-                        <p class="text-center" >Tipo </p>
-                      </div>
-                      <div class="col-3">
-                      <img class="w-100" src="../assets/img/ataque.png">
-                      <p class="text-center" >'. $pokemon->ataque .'</p>
-                      </div>
-                      <div class="col-3"> 
-                      <img class="w-100" src="../assets/img/velocidad.png">
-                      <p class="text-center" >'. $pokemon->velocidad .'</p>
-                      </div>
-                      
-                      </div>
-                      <div class="d-flex justify-content-center">
-                        <a class="btn btn-primary me-3" href="editar-pokemon.php?identificador='. $pokemon->identificador .'" >Editar</a>
-                        <a class="btn btn-danger me-3" href="eliminar-pokemon.php?identificador='. $pokemon->identificador .'" >Eliminar</a>
-                      </div>
-                    </div>
+            foreach ($pokemons as $pokemon) {
+                echo '<div class="col-sm-3 col-md-6 col-lg-3 mb-3">
+                <div class="card">
+                <span class="pokemon-id">' . $pokemon->identificador . '</span>
+                <div class="d-flex justify-content-center">
+                <img src="../uploads/' . $pokemon->img . '" class="card-img-top pokemon-img" alt="' . $pokemon->nombre . '">
+                </div>
+                <div class="card-body border-top">
+                  <h5 class="card-title"><a class="text-black" href="detail.php?identificador='. $pokemon->identificador .'" >' . $pokemon->nombre . '</a></h5>
+                  <div class="row" >
+                  <div class="col-3"> 
+                  <img class="w-100" src="../assets/img/vida.png">
+                  <p class="text-center" >'. $pokemon->vida .'</p>
                   </div>
-                    </div>';
-                }
-            }else{
-                foreach ($pokemons as $pokemon) {
-                    echo '<div class="col-sm-3 col-md-6 col-lg-3 mb-3">
-                    <div class="card">
-                    <span class="pokemon-id">' . $pokemon->identificador . '</span>
-                    <div class="d-flex justify-content-center">
-                    <img src="../uploads/' . $pokemon->img . '" class="card-img-top pokemon-img" alt="' . $pokemon->nombre . '">
-                    </div>
-                    <div class="card-body border-top">
-                      <h5 class="card-title"><a class="text-black" href="detail.php?identificador='. $pokemon->identificador .'" >' . $pokemon->nombre . '</a></h5>
-                      <div class="row" >
-                      <div class="col-3"> 
-                      <img class="w-100" src="../assets/img/vida.png">
-                      <p class="text-center" >'. $pokemon->vida .'</p>
-                      </div>
-                      <div class="col-3"> 
-                      <img class="w-100" src="../assets/img/tipo/' . $pokemon->tipo . '.png">
-                        <p class="text-center" >Tipo </p>
-                      </div>
-                      <div class="col-3">
-                      <img class="w-100" src="../assets/img/ataque.png">
-                      <p class="text-center" >'. $pokemon->ataque .'</p>
-                      </div>
-                      <div class="col-3"> 
-                      <img class="w-100" src="../assets/img/velocidad.png">
-                      <p class="text-center" >'. $pokemon->velocidad .'</p>
-                      </div>
-                      
-                      </div>
-                    </div>
+                  <div class="col-3"> 
+                  <img class="w-100" src="../assets/img/tipo/' . $pokemon->tipo . '.png">
+                    <p class="text-center" >Tipo </p>
                   </div>
-                    </div>';
-                }
+                  <div class="col-3">
+                  <img class="w-100" src="../assets/img/ataque.png">
+                  <p class="text-center" >'. $pokemon->ataque .'</p>
+                  </div>
+                  <div class="col-3"> 
+                  <img class="w-100" src="../assets/img/velocidad.png">
+                  <p class="text-center" >'. $pokemon->velocidad .'</p>
+                  </div>
+                  
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <a class="btn btn-primary me-3" href="editar-pokemon.php?identificador='. $pokemon->identificador .'" >Editar</a>
+                    <a class="btn btn-danger me-3" href="detail.php?identificador='. $pokemon->identificador .'" >Eliminar</a>
+                  </div>
+                </div>
+              </div>
+                </div>';
             }
 
             ?>
