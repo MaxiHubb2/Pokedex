@@ -22,9 +22,10 @@ require_once("../assets/functions/auth.php");
     <header>
         <nav class="navbar bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand poke-text"><img src="../assets\img\logo\logo.png" width="50" height="50"> Pokedex</a>
+                <a class="navbar-brand poke-text"><img src="../assets\img\logo\logo.png" width="50" height="50">
+                    Pokedex</a>
                 <form class="d-flex" action="../assets/functions/logout.php" method="post">
-                    <button class="btn btn-outline-danger" type="submit">Salir de Pokedex</button>
+                    <button class="btn btn-danger" type="submit">Salir de Pokedex</button>
                 </form>
             </div>
         </nav>
@@ -33,9 +34,11 @@ require_once("../assets/functions/auth.php");
         <div class="row">
             <div class="col-md-12 py-3">
                 <form class="d-flex col" action="" method="post">
-                    <input type="text" class="form-control" name="buscar"
-                        placeholder="Ingrese nombre, tipo o número de Pokémon">
-                    <button type="submit" class="btn btn-primary" name="boton">¿Quién es este Pokémon?</button>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Ingrese nombre, tipo o número de Pokémon"
+                            aria-label="Ingrese nombre, tipo o número de Pokémon" name="buscar" aria-describedby="button-addon2">
+                        <button class="btn btn-warning" type="submit" id="button-addon2">¿Quién es este Pokémon?</button>
+                    </div>
                 </form>
             </div>
 

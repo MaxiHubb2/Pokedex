@@ -111,7 +111,8 @@
                         <img src="../assets/img/pikachu2.gif" alt="" width="100" class="pokemonGif">
                         <img src="../assets/img/squirtle.gif" alt="" width="100" class="pokemonGif">
                         <div class="mb-3 col-12 col-sm-4 col-lg-4 pt-3">
-                            <button type="submit" class="btn btn-danger w-100">Editar</button>
+                            <button type="submit" class="btn btn-primary w-100">Editar</button>
+                            <a href="busqueda.php" class="btn btn-danger w-100 mt-3">Cancelar</a>
                         </div>
                         <img src="../assets/img/bulbasaur.gif" alt="" width="100" class="pokemonGif">
                         <img src="../assets/img/charmander.gif" alt="" width="100" class="pokemonGif">
