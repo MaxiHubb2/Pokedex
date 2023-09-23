@@ -109,3 +109,8 @@
     position: absolute;
     bottom: 0;
 }
+.body-detail{
+    background-image: url(https://i.gifer.com/XzZg.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
