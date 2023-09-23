@@ -32,7 +32,7 @@
             <div class="col-6">
                 <h3>¿Estas seguro de querer eliminar este Pokémon?</h3>
                 <h4 class="text-danger">Esta acción es irreversible</h4>
-                <form action="" method="post" class="mt-5 eliminar-desktop">
+                <form action="../assets/functions/delete_pokemon.php" method="post" class="mt-5 eliminar-desktop">
                     <input type="hidden" name="identificador" value="<?php echo $id;?>" >
                     <div class="d-flex justify-content-center">
                         <button type="submit" class="btn btn-primary me-3">Confirmar</button>
@@ -41,7 +41,7 @@
                 </form>
             </div>
             <div class="col-12 mt-5 eliminar-mobile">
-                <form action="" method="post">
+                <form action="../assets/functions/delete_pokemon.php" method="post">
                     <input type="hidden" name="identificador" value="<?php echo $id;?>" >
                     <div class="d-flex justify-content-center">
                         <button type="submit" class="btn btn-primary me-3">Confirmar</button>
