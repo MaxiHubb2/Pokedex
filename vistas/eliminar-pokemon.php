@@ -1,4 +1,4 @@
-<?php
+gi<?php
 
     require_once("../assets/functions/auth.php");
 
