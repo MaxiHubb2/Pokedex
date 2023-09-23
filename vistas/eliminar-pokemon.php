@@ -1,6 +1,6 @@
 <?php
 
-    require_once("../assets/functions/auth.php");
+    require_once("../assets/functions/admin_guard.php");
 
     if(!isset($_GET['identificador'])){
         header("Location: busqueda.php");
