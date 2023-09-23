@@ -40,7 +40,7 @@ echo '</div>'; */
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
-<body>
+<body class="body-detail bg-blur">
     <header>
         <nav class="navbar navbar-dark bg-dark fixed-top">
             <div class="container-fluid">
