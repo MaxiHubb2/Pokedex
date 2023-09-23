@@ -23,7 +23,7 @@ require_once '../assets/functions/auth.php';
         <header>
             <nav class="navbar navbar-dark bg-dark fixed-top">
                 <div class="container-fluid">
-                    <a class="navbar-brand poke-text"><img src="../assets\img\logo\logo.png" width="50" height="50">
+                    <a class="navbar-brand poke-text" href="busqueda.php"><img src="../assets\img\logo\logo.png" width="50" height="50">
                     Pokedex</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
