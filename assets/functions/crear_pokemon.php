@@ -2,7 +2,9 @@
 
     require_once("./db_functions.php");
 
-    if(isset($_POST) && isset($_FILES['img'])){
+    if(isset($_POST) && isset($_FILES['img']) && isset($_POST['identificador']) && isset($_POST['nombre']) && isset($_POST['tipo'])
+        && isset($_POST['descripcion']) && isset($_POST['vida']) && isset($_POST['defensa']) && isset($_POST['peso'])
+        && isset($_POST['velocidad']) && isset($_POST['ataque']) ){
         $identificador=$_POST['identificador'];
         $nombre=$_POST['nombre'];
         $tipo=$_POST['tipo'];
@@ -19,7 +21,10 @@
 
         if($id=ejecutar_query($query,false,true)){
             if($_FILES["img"]["error"] > 0){
-                echo "Error: " . $_FILES["img"]["error"] . "<br />";
+                session_start();
+                $_SESSION['error']=("Error: " . $_FILES["img"]["error"] );
+                header("Location: ../../vistas/error.php");
+                exit();
             }else{
                 $extension = pathinfo($_FILES["img"]["name"], PATHINFO_EXTENSION);
                 $destino = "../../uploads/" . $id . "." . $extension;
@@ -29,9 +34,17 @@
                 header("Location: ../../vistas/busqueda.php");
                 exit();
             }
-        }else echo "error al crear pokemon";
+        }else{
+            session_start();
+            $_SESSION['error']=("Error al crear pokémon");
+            header("Location: ../../vistas/error.php");
+            exit();
+        }
     }else{
-        echo "no data";
+        session_start();
+        $_SESSION['error']=("No hay datos suficientes para crear pokémon");
+        header("Location: ../../vistas/error.php");
+        exit();
     }
     
 ?>

@@ -76,7 +76,10 @@ INSERT INTO `tipos_pokemon` (`id`, `nombre`, `descripcion`) VALUES
 (1, 'Agua', 'Tipo de Pokemon asociado con agua y habilidades acuáticas.'),
 (2, 'Fuego', 'Tipo de Pokemon asociado con fuego y habilidades relacionadas con el fuego.'),
 (3, 'Planta', 'Tipo de Pokemon asociado con plantas y habilidades relacionadas con la naturaleza.'),
-(4, 'Electrico', 'Tipo de Pokemon asociado con electricidad y habilidades eléctricas.');
+(4, 'Electrico', 'Tipo de Pokemon asociado con electricidad y habilidades eléctricas.'),
+(5, 'Piedra', 'Tipo relacionado con elementos rocosos y resistentes.'),
+(6, 'Volador', 'Tipo asociado con Pokémon que tienen la habilidad de volar o flotar en el aire.');
+
 
 -- --------------------------------------------------------
 
