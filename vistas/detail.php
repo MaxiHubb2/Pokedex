@@ -1,32 +1,6 @@
 <?php
-require_once("../assets/functions/obtenerDetalle.php");
-require_once("../assets/functions/auth.php");
-        
-/* echo '<div>';
-    echo '<div>';
-        echo "<h3>$_pokemon->nombre</h3>";
-        echo '<img src="../uploads/<?php echo $_pokemon->img; ?>" alt="<?php echo $_pokemon->nombre; ?>" width="50"
-height="50"/>';
-echo '</div>';
-echo '<div>';
-    echo "<h3>$_pokemon->tipo</h3>";
-    echo '</div>';
-echo '<div>';
-    echo "<p>$_pokemon->descripcion</p>";
-    echo '</div>';
-echo '<div>';
-    echo "<h2>Vida: </h2>";
-    echo "<meter min='0' max='200' value='$_pokemon->vida' low='40' high='150' optimun='200'></meter>";
-    echo "<h2>Defensa: </h2>";
-    echo "<meter min='0' max='200' value='$_pokemon->defensa' low='40' high='150' optimun='200'></meter>";
-    echo "<h2>Ataque: </h2>";
-    echo "<meter min='0' max='200' value='$_pokemon->ataque' low='40' high='150' optimun='200'></meter>";
-    echo "<h2>Peso: </h2>";
-    echo "<meter min='0' max='200' value='$_pokemon->peso' low='40' high='150' optimun='200'></meter>";
-    echo "<h2>Velocidad: </h2>";
-    echo "<meter min='0' max='200' value='$_pokemon->velocidad' low='40' high='150' optimun='200'></meter>";
-    echo '</div>';
-echo '</div>'; */
+    require_once("../assets/functions/obtenerDetalle.php");
+    require_once("../assets/functions/auth.php");
 ?>
 
 <!DOCTYPE html>
@@ -139,9 +113,9 @@ echo '</div>'; */
                                 <img class="w-100" src="../assets/img/peso.png">
                                 <p class="text-center"><?php echo $_pokemon->peso; ?></p>
                             </div>
-                            <p><?php echo$_pokemon->descripcion?></p>
+                            <p><?php echo$_pokemon->descripcion;?></p>
                             <h4 class="border-top pt-3">Sobre el tipo</h4>
-                            <p><?php echo$_pokemon->tipoDesc; ?></p>
+                            <p><?php echo $_pokemon->tipoDesc ?></p>
                         </div>
                     </div>
                 </div>
