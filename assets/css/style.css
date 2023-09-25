@@ -97,7 +97,7 @@
 }
 
 .body-busqueda {
-    background-image: url(https://pbs.twimg.com/media/EYtf1tjWoAE4fpD.jpg:large);
+    background-image: url("../img/fondo_busqueda.jpg_large");
 }
 
 .poke-text {
@@ -111,7 +111,7 @@
 }
 
 .body-detail {
-    background-image: url(https://i.gifer.com/XzZg.gif);
+    background-image: url("../img/fondo_detail.gif");
     background-repeat: no-repeat;
     background-size: cover;
 }
