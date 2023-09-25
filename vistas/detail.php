@@ -115,21 +115,29 @@ echo '</div>'; */
                     <div class="card-body border-top">
                         <h1 class="card-title"><?php echo $_pokemon->nombre; ?></h1>
                         <div class="row">
-                            <div class="col-3">
+                            <div class="col-2">
                                 <img class="w-100" src="../assets/img/vida.png">
                                 <p class="text-center"><?php echo $_pokemon->vida; ?></p>
                             </div>
-                            <div class="col-3">
+                            <div class="col-2">
                                 <img class="w-100" src="../assets/img/tipo/<?php echo $_pokemon->tipo; ?>.png">
                                 <p class="text-center">Tipo </p>
                             </div>
-                            <div class="col-3">
+                            <div class="col-2">
+                                <img class="w-100" src="../assets/img/defensa.png">
+                                <p class="text-center"><?php echo $_pokemon->defensa; ?></p>
+                            </div>
+                            <div class="col-2">
                                 <img class="w-100" src="../assets/img/ataque.png">
                                 <p class="text-center"><?php echo $_pokemon->ataque; ?></p>
                             </div>
-                            <div class="col-3">
+                            <div class="col-2">
                                 <img class="w-100" src="../assets/img/velocidad.png">
                                 <p class="text-center"><?php echo $_pokemon->velocidad; ?></p>
+                            </div>
+                            <div class="col-2">
+                                <img class="w-100" src="../assets/img/peso.png">
+                                <p class="text-center"><?php echo $_pokemon->peso; ?></p>
                             </div>
                             <p><?php echo$_pokemon->descripcion?></p>
                             <h4 class="border-top pt-3">Sobre el tipo</h4>
