@@ -1,0 +1,7 @@
+{
+    "funciones" : {
+      "api/*.php" : {
+        "tiempo de ejecución" : " vercel-php@0.6.0 "
+     }
+   }
+ }
