@@ -4,6 +4,8 @@ require_once '../assets/functions/db_functions.php';
 require_once '../assets/functions/consultarPokemon.php';
 require_once '../assets/functions/auth.php';
 
+require_once '../assets/functions/auth.php';
+
 
 ?>
 
@@ -23,7 +25,7 @@ require_once '../assets/functions/auth.php';
         <header>
             <nav class="navbar navbar-dark bg-dark fixed-top">
                 <div class="container-fluid">
-                    <a class="navbar-brand poke-text" href="busqueda.php"><img src="../assets\img\logo\logo.png" width="50" height="50">
+                    <a class="navbar-brand poke-text"><img src="../assets\img\logo\logo.png" width="50" height="50">
                     Pokedex</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
@@ -42,14 +44,26 @@ require_once '../assets/functions/auth.php';
                     </div>
                     <div class="offcanvas-body">
                         <div class="row botonera-sidebar">
-                            <div class="col-md-6">
-                                <a class="btn btn-primary mb-3 w-100" aria-current="page" href="crear-pokemon.php">Crear Pokémon</a>
-                            </div>
-                            <div class="col-md-6">
-                                <form  action="../assets/functions/logout.php" method="post">
-                                    <button class="btn btn-danger w-100" type="submit">Salir de Pokedex</button>
-                                </form>
-                            </div>
+                            <?php 
+                                if($logued){
+                                    echo'
+                                    <div class="col-md-6">
+                                        <a class="btn btn-primary mb-3 w-100" aria-current="page" href="crear-pokemon.php">Crear Pokémon</a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <form  action="../assets/functions/logout.php" method="post">
+                                            <button class="btn btn-danger w-100" type="submit">Salir de Pokedex</button>
+                                        </form>
+                                    </div>
+                                    ';
+                                }else{
+                                    echo'
+                                    <div class="col-md-6">
+                                        <a class="btn btn-primary mb-3 w-100" aria-current="page" href="login.php">Iniciar Sesión</a>
+                                    </div>
+                                    ';
+                                }
+                            ?>
                         </div>
                         <div class="pokemons-nav">
                             <img src="../assets/img/pikachu2.gif" alt="" width="75" >
@@ -84,41 +98,76 @@ require_once '../assets/functions/auth.php';
                 </div>                
                 ';
             }
-            foreach ($pokemons as $pokemon) {
-                echo '<div class="col-sm-3 col-md-6 col-lg-3 mb-3">
-                <div class="card">
-                <span class="pokemon-id">' . $pokemon->identificador . '</span>
-                <div class="d-flex justify-content-center">
-                <img src="../uploads/' . $pokemon->img . '" class="card-img-top pokemon-img" alt="' . $pokemon->nombre . '">
-                </div>
-                <div class="card-body border-top">
-                  <h5 class="card-title"><a class="text-black" href="detail.php?identificador='. $pokemon->identificador .'" >' . $pokemon->nombre . '</a></h5>
-                  <div class="row" >
-                  <div class="col-3"> 
-                  <img class="w-100" src="../assets/img/vida.png">
-                  <p class="text-center" >'. $pokemon->vida .'</p>
+            if($logued){
+                foreach ($pokemons as $pokemon) {
+                    echo '<div class="col-sm-3 col-md-6 col-lg-3 mb-3">
+                    <div class="card">
+                    <span class="pokemon-id">' . $pokemon->identificador . '</span>
+                    <div class="d-flex justify-content-center">
+                    <img src="../uploads/' . $pokemon->img . '" class="card-img-top pokemon-img" alt="' . $pokemon->nombre . '">
+                    </div>
+                    <div class="card-body border-top">
+                      <h5 class="card-title"><a class="text-black" href="detail.php?identificador='. $pokemon->identificador .'" >' . $pokemon->nombre . '</a></h5>
+                      <div class="row" >
+                      <div class="col-3"> 
+                      <img class="w-100" src="../assets/img/vida.png">
+                      <p class="text-center" >'. $pokemon->vida .'</p>
+                      </div>
+                      <div class="col-3"> 
+                      <img class="w-100" src="../assets/img/tipo/' . $pokemon->tipo . '.png">
+                        <p class="text-center" >Tipo </p>
+                      </div>
+                      <div class="col-3">
+                      <img class="w-100" src="../assets/img/ataque.png">
+                      <p class="text-center" >'. $pokemon->ataque .'</p>
+                      </div>
+                      <div class="col-3"> 
+                      <img class="w-100" src="../assets/img/velocidad.png">
+                      <p class="text-center" >'. $pokemon->velocidad .'</p>
+                      </div>
+                      
+                      </div>
+                      <div class="d-flex justify-content-center">
+                        <a class="btn btn-primary me-3" href="editar-pokemon.php?identificador='. $pokemon->identificador .'" >Editar</a>
+                        <a class="btn btn-danger me-3" href="eliminar-pokemon.php?identificador='. $pokemon->identificador .'" >Eliminar</a>
+                      </div>
+                    </div>
                   </div>
-                  <div class="col-3"> 
-                  <img class="w-100" src="../assets/img/tipo/' . $pokemon->tipo . '.png">
-                    <p class="text-center" >Tipo </p>
+                    </div>';
+                }
+            }else{
+                foreach ($pokemons as $pokemon) {
+                    echo '<div class="col-sm-3 col-md-6 col-lg-3 mb-3">
+                    <div class="card">
+                    <span class="pokemon-id">' . $pokemon->identificador . '</span>
+                    <div class="d-flex justify-content-center">
+                    <img src="../uploads/' . $pokemon->img . '" class="card-img-top pokemon-img" alt="' . $pokemon->nombre . '">
+                    </div>
+                    <div class="card-body border-top">
+                      <h5 class="card-title"><a class="text-black" href="detail.php?identificador='. $pokemon->identificador .'" >' . $pokemon->nombre . '</a></h5>
+                      <div class="row" >
+                      <div class="col-3"> 
+                      <img class="w-100" src="../assets/img/vida.png">
+                      <p class="text-center" >'. $pokemon->vida .'</p>
+                      </div>
+                      <div class="col-3"> 
+                      <img class="w-100" src="../assets/img/tipo/' . $pokemon->tipo . '.png">
+                        <p class="text-center" >Tipo </p>
+                      </div>
+                      <div class="col-3">
+                      <img class="w-100" src="../assets/img/ataque.png">
+                      <p class="text-center" >'. $pokemon->ataque .'</p>
+                      </div>
+                      <div class="col-3"> 
+                      <img class="w-100" src="../assets/img/velocidad.png">
+                      <p class="text-center" >'. $pokemon->velocidad .'</p>
+                      </div>
+                      
+                      </div>
+                    </div>
                   </div>
-                  <div class="col-3">
-                  <img class="w-100" src="../assets/img/ataque.png">
-                  <p class="text-center" >'. $pokemon->ataque .'</p>
-                  </div>
-                  <div class="col-3"> 
-                  <img class="w-100" src="../assets/img/velocidad.png">
-                  <p class="text-center" >'. $pokemon->velocidad .'</p>
-                  </div>
-                  
-                  </div>
-                  <div class="d-flex justify-content-center">
-                    <a class="btn btn-primary me-3" href="editar-pokemon.php?identificador='. $pokemon->identificador .'" >Editar</a>
-                    <a class="btn btn-danger me-3" href="eliminar-pokemon.php?identificador='. $pokemon->identificador .'" >Eliminar</a>
-                  </div>
-                </div>
-              </div>
-                </div>';
+                    </div>';
+                }
             }
 
             ?>

@@ -1,5 +1,6 @@
 <?php
 require_once("../assets/functions/obtenerDetalle.php");
+require_once("../assets/functions/auth.php");
         
 /* echo '<div>';
     echo '<div>';
@@ -67,15 +68,26 @@ echo '</div>'; */
                                 <a class="btn btn-warning mb-3 w-100" aria-current="page" href="busqueda.php">Volver a
                                     Pokedex</a>
                             </div>
-                            <div class="col-md-6">
-                                <a class="btn btn-primary mb-3 w-100" aria-current="page" href="crear-pokemon.php">Crear
-                                    Pokémon</a>
-                            </div>
-                            <div class="col-md-6">
-                                <form action="../assets/functions/logout.php" method="post">
-                                    <button class="btn btn-danger w-100" type="submit">Salir de Pokedex</button>
-                                </form>
-                            </div>
+                            <?php 
+                                if($logued){
+                                    echo'
+                                    <div class="col-md-6">
+                                        <a class="btn btn-primary mb-3 w-100" aria-current="page" href="crear-pokemon.php">Crear Pokémon</a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <form  action="../assets/functions/logout.php" method="post">
+                                            <button class="btn btn-danger w-100" type="submit">Salir de Pokedex</button>
+                                        </form>
+                                    </div>
+                                    ';
+                                }else{
+                                    echo'
+                                    <div class="col-md-6">
+                                        <a class="btn btn-primary mb-3 w-100" aria-current="page" href="login.php">Iniciar Sesión</a>
+                                    </div>
+                                    ';
+                                }
+                            ?>
                         </div>
                         <div class="pokemons-nav">
                             <img src="../assets/img/pikachu2.gif" alt="" width="75">
