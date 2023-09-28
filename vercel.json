@@ -1,7 +1,7 @@
 {
-    "funciones" : {
-      "api/*.php" : {
-        "tiempo de ejecución" : " vercel-php@0.6.0 "
-     }
-   }
- }
+    "functions": {
+      "api/*.php": {
+        "runtime": "vercel-php@0.6.0"
+      }
+    }
+  }
